@@ -26,13 +26,14 @@ function ProjectsGrid() {
 		return category.includes(selectProject);
 	});
 
-	return (
-		<section className="py-5 sm:py-10 mt-5 sm:mt-10">
-			<div className="text-center">
-				<p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
-					Projects portfolio
-				</p>
-			</div>
+       return (
+	       <section className="py-5 sm:py-10 mt-5 sm:mt-10">
+		       <div className="text-center">
+			       <p className="font-general-medium text-2xl sm:text-4xl mb-1 text-ternary-dark dark:text-ternary-light">
+				       作品集
+			       </p>
+			       <p className="text-xs sm:text-sm text-gray-400 mb-2">Projects portfolio</p>
+		       </div>
 
 			<div className="mt-10 sm:mt-16">
 				<h3

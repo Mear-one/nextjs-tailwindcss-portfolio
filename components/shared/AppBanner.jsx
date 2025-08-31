@@ -1,83 +1,112 @@
+
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
+import { useState, useEffect } from 'react';
+
 
 function AppBanner() {
 	const [activeTheme] = useThemeSwitcher();
+	const images = [
+		'/images/首页轮播/1.jpg',
+		'/images/首页轮播/2.jpg',
+		'/images/首页轮播/3.jpg',
+		'/images/首页轮播/4.jpg',
+		'/images/首页轮播/5.jpg',
+		'/images/首页轮播/6.jpg',
+		'/images/首页轮播/7.jpg',
+		'/images/首页轮播/8.jpg',
+		'/images/首页轮播/9.jpg',
+		'/images/首页轮播/10.jpg'
+	];
+	const [current, setCurrent] = useState(0);
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setCurrent((prev) => (prev + 1) % images.length);
+		}, 3000);
+		return () => clearInterval(timer);
+	}, [images.length]);
 
-	return (
-		<motion.section
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-			className="flex flex-col sm:justify-between items-center sm:flex-row mt-5 md:mt-2"
-		>
-			<div className="w-full md:w-1/3 text-left">
-				<motion.h1
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						ease: 'easeInOut',
-						duration: 0.9,
-						delay: 0.1,
-					}}
-					className="font-general-semibold text-2xl lg:text-3xl xl:text-4xl text-center sm:text-left text-ternary-dark dark:text-primary-light uppercase"
-				>
-					Hi, Iam Stoman
-				</motion.h1>
-				<motion.p
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						ease: 'easeInOut',
-						duration: 0.9,
-						delay: 0.2,
-					}}
-					className="font-general-medium mt-4 text-lg md:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left leading-normal text-gray-500 dark:text-gray-200"
-				>
-					A Full-Stack Developer & Design Enthusiast
-				</motion.p>
-				<motion.div
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{
-						ease: 'easeInOut',
-						duration: 0.9,
-						delay: 0.3,
-					}}
-					className="flex justify-center sm:block"
-				>
-					<a
-						download="Stoman-Resume.pdf"
-						href="/files/Stoman-Resume.pdf"
-						className="font-general-medium flex justify-center items-center w-36 sm:w-48 mt-12 mb-6 sm:mb-0 text-lg border border-indigo-200 dark:border-ternary-dark py-2.5 sm:py-3 shadow-lg rounded-lg bg-indigo-50 focus:ring-1 focus:ring-indigo-900 hover:bg-indigo-500 text-gray-500 hover:text-white duration-500"
-						aria-label="Download Resume"
-					>
-						<FiArrowDownCircle className="ml-0 sm:ml-1 mr-2 sm:mr-3 h-5 w-5 sn:w-6 sm:h-6 duration-100"></FiArrowDownCircle>
-						<span className="text-sm sm:text-lg duration-100">
-							Download CV
-						</span>
-					</a>
-				</motion.div>
-			</div>
-			<motion.div
-				initial={{ opacity: 0, y: -180 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
-				className="w-full sm:w-2/3 text-right float-right mt-8 sm:mt-0"
-			>
-				<img
-					layout="responsive"
-					src={
-						activeTheme === 'dark'
-							? '/images/developer.svg'
-							: '/images/developer-dark.svg'
-					}
-					alt="Developer"
-				/>
-			</motion.div>
-		</motion.section>
+       return (
+	      <>
+	      <motion.section
+		      initial={{ opacity: 0 }}
+		      animate={{ opacity: 1 }}
+		      transition={{ ease: 'easeInOut', duration: 0.9, delay: 0.2 }}
+		      className="flex flex-col sm:flex-row items-stretch mt-0 pt-8 pb-8 px-2 sm:px-8 max-w-screen-xl mx-auto"
+	      >
+		      {/* 左侧整体：马御恒+副标题+自我介绍，带灰色背景和红色边框 */}
+		      <div className="relative flex flex-col min-w-[340px] max-w-[700px] w-full sm:w-[700px] p-8 mr-8 bg-gray-100 rounded-xl">
+			      {/* 内容区 */}
+			      <div className="flex flex-col items-start justify-start h-full">
+				      <motion.h1
+					      initial={{ opacity: 0 }}
+					      animate={{ opacity: 1 }}
+					      transition={{
+						      ease: 'easeInOut',
+						      duration: 0.9,
+						      delay: 0.1,
+					      }}
+					      className="font-general-semibold text-5xl md:text-7xl font-bold mb-4 text-left text-ternary-dark dark:text-primary-light"
+				      >
+					      <span className="flex flex-row items-end justify-start">
+						      <span>马御恒</span>
+					      </span>
+				      </motion.h1>
+				      <motion.p
+					      initial={{ opacity: 0 }}
+					      animate={{ opacity: 1 }}
+					      transition={{
+						      ease: 'easeInOut',
+						      duration: 0.9,
+						      delay: 0.15,
+					      }}
+					      className="text-xl md:text-2xl text-gray-500 mb-2 text-left"
+				      >
+					      独立设计师
+				      </motion.p>
+				      <motion.p
+					      initial={{ opacity: 0 }}
+					      animate={{ opacity: 1 }}
+					      transition={{
+						      ease: 'easeInOut',
+						      duration: 0.9,
+						      delay: 0.18,
+					      }}
+					      className="text-lg md:text-l text-gray-500 mb-6 text-left"
+				      >
+					      用设计与技术，让想法变为现实
+				      </motion.p>
+				      {/* 自我介绍 */}
+				      <div className="text-base md:text-sm text-gray-600 text-left">
+					      <p className="mb-4">我是一名创意开发者与产品塑造者，热衷于打造视觉与触觉精准平衡的实体产品，将前沿创意与可规模化的印刷工程融为一体。我最热爱的工作在于创意与制造的交叉点——创造的产品不仅令人惊艳，更是为生产落地与用户体验而精心构建。</p>
+					      <p className="mb-4">目前，我作为独立设计师与商品化专家，专注于光栅视觉与卡牌工艺领域。我负责从3D建模、动态渲染到印刷生产落地的全流程开发，曾主导推出现象级光栅卡片系列，在社交媒体引发广泛热议并取得显著商业增长。</p>
+					      <p className="mb-4">过去，我有机会参与各类创意项目的开发与推广——从产品视觉体系构建、宣传Banner设计到新品PV动画制作。此外，我也活跃于跨界创意领域，以DJ身份为艺术画展构建氛围体验，这种多领域实践持续为我的产品注入叙事感染力。</p>
+					      <p>在业余时间，我通常会做DJ、探索视听表达，和女友一起看展布展，或者制作音乐，录制自己的个人音乐电台。</p>
+				      </div>
+			      </div>
+		      </div>
+		      {/* 右侧图片区域，放大并填满高度 */}
+		      <motion.div className="relative flex-1 flex-shrink-0 flex items-stretch justify-end">
+			      <div className="relative z-10 w-full flex items-stretch">
+				      <Image
+					      src={images[current]}
+					      alt={`轮播图${current + 1}`}
+					      fill
+					      className="rounded-lg object-cover w-full h-full transition-all duration-700"
+					      priority
+				      />
+			      </div>
+		      </motion.div>
+	      </motion.section>
+				{/* 新增一行小字，支持span和换行 */}
+				<div className="w-full text-left text-sm text-gray-400 mt-40 px-4 sm:px-8">
+					<span>Mear / Design & Art Practice</span><br />
+					<span>Working globally from Guangzhou. A vessel of persistence through tangible creation.</span><br />
+					<span>Crossing domains: design, DJing, exhibition soundscapes. Music producer. Independent radio. mear.com</span>
+				</div>
+	      </>
 	);
 }
 
