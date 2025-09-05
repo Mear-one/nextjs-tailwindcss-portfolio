@@ -1,8 +1,8 @@
-const selectOptions = [
-	'Web Application',
-	'Mobile Application',
-	'UI/UX Design',
-	'Branding',
+const categories = [
+	'商业视觉与品牌设计',
+	'IP卡牌与文创设计',
+	'智能交互与硬件创新',
+	'个人艺术与创意探索',
 ];
 
 function ProjectsFilter({ setSelectProject }) {
@@ -31,7 +31,7 @@ function ProjectsFilter({ setSelectProject }) {
 				All Projects
 			</option>
 
-			{selectOptions.map((option) => (
+			{categories.map((option) => (
 				<option className="text-normal sm:text-md" key={option}>
 					{option}
 				</option>

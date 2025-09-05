@@ -101,7 +101,7 @@ function AppBanner() {
 		      </motion.div>
 	      </motion.section>
 				{/* 新增一行小字，支持span和换行 */}
-				<div className="w-full text-left text-sm text-gray-400 mt-40 px-4 sm:px-8">
+				<div className="w-full text-left text-sm text-gray-400 mt-0 px-4 sm:px-8">
 					<span>Mear / Design & Art Practice</span><br />
 					<span>Working globally from Guangzhou. A vessel of persistence through tangible creation.</span><br />
 					<span>Crossing domains: design, DJing, exhibition soundscapes. Music producer. Independent radio. mear.com</span>
