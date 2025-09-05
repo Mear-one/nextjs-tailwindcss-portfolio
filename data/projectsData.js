@@ -6,37 +6,37 @@ export const projectsData = [
         id: uuidv4(),
         title: '海报设计',
         category: '商业视觉与品牌设计',
-        img: '/images/海报设计/海报 (1).jpg',
+        img: '/images/poster/p1.jpg',
     },
     {
         id: uuidv4(),
         title: '宣传pv',
         category: '商业视觉与品牌设计',
-        img: '/images/宣传pv/pvimg1.jpg',
+        img: '/images/pv/pvimg1.jpg',
     },
     // 继续添加你的作品
 	{
         id: uuidv4(),
         title: '3D电子蝴蝶项目',
         category: '智能交互与硬件创新',
-        img: '/images/电子蝴蝶/dz2.jpg',
+        img: '/images/eb/dz2.jpg',
     },
 	{
         id: uuidv4(),
         title: '光栅收藏卡',
         category: 'IP卡牌与文创设计',
-        img: '/images/卡牌设计/1.jpg',
+        img: '/images/card/1.jpg',
     },
 	{
         id: uuidv4(),
         title: '红楼梦收藏卡',
         category: 'IP卡牌与文创设计',
-        img: '/images/卡牌设计/2.jpg',
+        img: '/images/card/2.jpg',
     },
 	{
         id: uuidv4(),
         title: '花仙子收藏卡',
         category: 'IP卡牌与文创设计',
-        img: '/images/卡牌设计/4.jpg',
+        img: '/images/card/4.jpg',
     },
 ];
