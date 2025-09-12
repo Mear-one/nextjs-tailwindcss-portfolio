@@ -39,4 +39,10 @@ export const projectsData = [
         category: 'IP卡牌与文创设计',
         img: '/images/card/4.jpg',
     },
+    {
+        id: uuidv4(),
+        title: 'adobe内置聊天室',
+        category: '智能交互与硬件创新',
+        img: '/images/card/5.jpg',
+    },
 ];

@@ -3,8 +3,17 @@ import { FiClock, FiTag } from 'react-icons/fi';
 import PagesMetaHead from '../../components/PagesMetaHead';
 import { projectsData } from '../../data/projectsData';
 import RelatedProjects from '../../components/projects/RelatedProjects';
+import Link from 'next/link';
 
 function ProjectSingle(props) {
+	if (!props.project) {
+		return (
+			<div className="container mx-auto py-20 text-center text-2xl text-black-500">
+				未找到该作品，请检查链接或数据！
+			</div>
+		);
+	}
+
 	return (
 		<div className="container mx-auto">
 			<PagesMetaHead title={props.project.title} />
@@ -156,13 +165,12 @@ function ProjectSingle(props) {
 	);
 }
 
-export async function getServerSideProps({ query }) {
-	const { id } = query;
+export async function getServerSideProps(context) {
+	const { id } = context.params;
+	const project = projectsData.find((item) => item.id === id);
 	return {
 		props: {
-			project: projectsData.filter(
-				(project) => project.id === parseInt(id)
-			)[0],
+			project: project || null,
 		},
 	};
 }
