@@ -43,7 +43,7 @@ export const projectsData = [
         id: uuidv4(),
         title: 'adobe内置聊天室',
         category: '智能交互与硬件创新',
-        img: '/images/card/5.jpg',
+        img: '/images/card/7.jpg',
     },
      {
         id: uuidv4(),
